@@ -1,9 +1,6 @@
 /** @type {import('tailwindcss').Config} */
 module.exports = {
-  content: [
-    "./components/**/*.{js,ts,jsx,tsx,mdx}",
-    "./app/**/*.{js,ts,jsx,tsx,mdx}",
-  ],
+  content: ["./app/**/*.{js,ts,jsx,tsx}", "./components/**/*.{js,ts,jsx,tsx}"],
   theme: {
     extend: {
       colors: {
@@ -19,7 +16,7 @@ module.exports = {
       },
       backgroundImage: (theme) => ({
         "gradient-gradual":
-          "liner-gradient(180deg, rgba(116,116,116,0) 66.15%, %, #000000 100%)",
+          "linear-gradient(180deg, rgba(116, 116, 116, 0) 66.15%, #000000 100%)",
       }),
     },
     screens: {
