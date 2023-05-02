@@ -17,6 +17,7 @@ const ThoughtsCard = ({ className, post }: ThoughtsCardProps) => {
       <div className="z-0 relative w-full h-full">
         <Image
           fill
+          sizes="(min-width: 480px) 100vw, (max-width: 768px) 75vw, (max-width: 1060px) 50vw, 33vw"
           src={post?.image}
           alt="thoughts"
           placeholder="blur"
