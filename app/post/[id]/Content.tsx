@@ -1,11 +1,11 @@
 "use client";
 import React, { useState } from "react";
-import { Editor, EditorContent, useEditor } from "@tiptap/react";
+import { Editor, useEditor } from "@tiptap/react";
 import { FormattedPost } from "@/app/types";
-import { XMarkIcon, PencilSquareIcon } from "@heroicons/react/24/solid";
 import Image from "next/image";
 import StarterKit from "@tiptap/starter-kit";
-import EditorMenuBar from "./EditorMenuBar";
+import CategoryAndEdit from "./CategoryAndEdit";
+import Article from "./Article";
 
 type Props = {
   post: FormattedPost;
@@ -15,12 +15,22 @@ const Content = ({ post }: Props) => {
   const [isEditable, setIsEditable] = useState<boolean>(false);
   const [title, setTitle] = useState<string>(post.title);
   const [err, setErr] = useState<string>("");
+  const [tempTitle, setTempTitle] = useState<string>(title);
   const [content, setContent] = useState<string>(post.content);
   const [contentErr, setContentErr] = useState<string>("");
+  const [tempContent, setTempContent] = useState<string>(content);
+  const date = new Date(post?.createdAt);
+  const options = { year: "numeric", month: "long", day: "numeric" } as any;
+  const formattedDate = date.toLocaleDateString("en-US", options);
 
   const handleEditable = (bool: boolean) => {
     setIsEditable(bool);
     editor?.setEditable(bool);
+  };
+
+  const handleOnChangeTitle = (e: React.ChangeEvent<HTMLTextAreaElement>) => {
+    if (title) setErr("");
+    setTitle(e.target.value);
   };
 
   const handleOnChangeContent = ({ editor }: any) => {
@@ -33,6 +43,12 @@ const Content = ({ post }: Props) => {
     onUpdate: handleOnChangeContent,
     content: content,
     editable: isEditable,
+    editorProps: {
+      attributes: {
+        class:
+          "prose prose-sm xl:prose-2xl leading-8 focus:outline-none w-full max-w-full",
+      },
+    },
   });
 
   const handleSubmit = () => {};
@@ -42,24 +58,18 @@ const Content = ({ post }: Props) => {
       <h5 className="text-wh-300">
         {`Home > ${post.category} > ${post.title}`}
       </h5>
-      <div className="flex justify-between items-center">
-        <h4 className="bg-accent-orange py-2 px-5 text-wh-900 text-sm font-bold">
-          {post.category}
-        </h4>
-        <div className="mt-4">
-          {isEditable ? (
-            <div className="flex justify-between gap-3">
-              <button onClick={() => handleEditable(!isEditable)}>
-                <XMarkIcon className="h-6 w-6 text-accent-red" />
-              </button>
-            </div>
-          ) : (
-            <button onClick={() => handleEditable(!isEditable)}>
-              <PencilSquareIcon className="h-6 w-6 text-accent-red" />
-            </button>
-          )}
-        </div>
-      </div>
+      <CategoryAndEdit
+        isEditable={isEditable}
+        handleEditable={handleEditable}
+        title={title}
+        setTitle={setTitle}
+        tempTitle={tempTitle}
+        setTempTitle={setTempTitle}
+        tempContent={tempContent}
+        setTempContent={setTempContent}
+        editor={editor}
+        post={post}
+      />
       <form onSubmit={handleSubmit}>
         <>
           {isEditable ? (
@@ -67,7 +77,7 @@ const Content = ({ post }: Props) => {
               <textarea
                 className="border-2 rounded-md bg-wh-50 p-3 w-full"
                 placeholder="Title"
-                onChange={(e) => console.log("change title", e.target.value)}
+                onChange={handleOnChangeTitle}
                 value={title}
               />
             </div>
@@ -76,7 +86,7 @@ const Content = ({ post }: Props) => {
           )}
           <div className="flex gap-3">
             <h5 className="font-semibold text-xs">By {post.author}</h5>
-            <h6 className="text-wh-300 text xs">{post.createdAt}</h6>
+            <h6 className="text-wh-300 text-xs">{formattedDate}</h6>
           </div>
         </>
         <div className="relative w-auto mt-2 mb-16 h-96">
@@ -88,21 +98,13 @@ const Content = ({ post }: Props) => {
             style={{ objectFit: "cover" }}
           />
         </div>
-        <div
-          className={
-            isEditable
-              ? "border-2 rounded-md bg-wh-50 p-3"
-              : "w-full max-w-full"
-          }
-        >
-          {isEditable && (
-            <>
-              <EditorMenuBar editor={editor} />
-              <hr className="border-1 mt-2 mb-5" />
-            </>
-          )}
-          <EditorContent editor={editor} />
-        </div>
+        <Article
+          contentErr={contentErr}
+          isEditable={isEditable}
+          setContent={setContent}
+          editor={editor}
+          title={title}
+        />
         {isEditable && (
           <div className="flex justify-end">
             <button
