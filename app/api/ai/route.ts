@@ -7,7 +7,7 @@ const configuration = new Configuration({
 });
 const openai = new OpenAIApi(configuration);
 
-export async function POST(req: Request) {
+export async function POST(req: Request, res: any) {
   try {
     const { title, role } = await req.json();
 
@@ -16,18 +16,19 @@ export async function POST(req: Request) {
         model: "gpt-3.5-turbo",
         messages: [
           {
+            role: "user",
+            content: `Create 3 line blog post with html tags based on this title: ${title}`,
+          },
+          {
             role: "system",
             content: `${
               role || "I am a helpful assistant"
             }. Write with html tags.`,
           },
-          {
-            role: "user",
-            content: `Create 3 line blog post with html tags based on this title: ${title}`,
-          },
         ],
       });
 
+    // res.revalidate("/api/posts");
     return NextResponse.json(
       {
         content: aiResponse.data.choices[0].message?.content,

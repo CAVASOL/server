@@ -31,17 +31,14 @@ const Article = ({
       .setContent("Generating Ai Content. Please Wait...")
       .run();
 
-    const response = await fetch(
-      `${process.env.NEXT_PUBLIC_BASE_URL}/api/openai`,
-      {
-        method: "POST",
-        headers: { "Content-Type": "application/json" },
-        body: JSON.stringify({
-          title: title,
-          role: role,
-        }),
-      }
-    );
+    const response = await fetch(`${process.env.NEXT_PUBLIC_BASE_URL}/api/ai`, {
+      method: "POST",
+      headers: { "Content-Type": "application/json" },
+      body: JSON.stringify({
+        title: title,
+        role: role,
+      }),
+    });
     const data = await response.json();
 
     editor.chain().focus().setContent(data.content).run();
@@ -53,10 +50,10 @@ const Article = ({
       {isEditable && (
         <div className="border-2 rounded-md bg-wh-50 p-3 mb-3">
           <h4 className="m-0 p-0">Generate AI Content</h4>
-          <p className="my-1 p-0 text-sm">What type of writer do you want?</p>
+          <p className="my-1 p-0 text-xs">What type of writer do you want?</p>
           <div className="flex justify-between gap-5">
             <input
-              className="border-2 rounded-md bg-wh-50 ps-3 py-1 w-full"
+              className="border-2 rounded-md bg-wh-50 px-3 py-1 w-full"
               placeholder="Role"
               onChange={(e) => setRole(e.target.value)}
               value={role}

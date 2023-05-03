@@ -79,7 +79,7 @@ const EditorMenuBar = ({ editor }: Props) => {
         >
           <i>I</i>
         </button>
-        <button
+        {/* <button
           type="button"
           onClick={() => editor.chain().focus().toggleStrike().run()}
           disabled={!editor.can().chain().focus().toggleStrike().run()}
@@ -90,7 +90,7 @@ const EditorMenuBar = ({ editor }: Props) => {
           }
         >
           strike
-        </button>
+        </button> */}
         <button
           type="button"
           onClick={() => editor.chain().focus().toggleCode().run()}
@@ -114,7 +114,7 @@ const EditorMenuBar = ({ editor }: Props) => {
         >
           paragraph
         </button>
-        <button
+        {/* <button
           type="button"
           onClick={() => editor.chain().focus().toggleBulletList().run()}
           className={
@@ -124,8 +124,8 @@ const EditorMenuBar = ({ editor }: Props) => {
           }
         >
           bullet list
-        </button>
-        <button
+        </button> */}
+        {/* <button
           type="button"
           onClick={() => editor.chain().focus().toggleOrderedList().run()}
           className={
@@ -135,8 +135,8 @@ const EditorMenuBar = ({ editor }: Props) => {
           }
         >
           ordered list
-        </button>
-        <button
+        </button> */}
+        {/* <button
           type="button"
           onClick={() => editor.chain().focus().toggleCodeBlock().run()}
           className={
@@ -146,8 +146,8 @@ const EditorMenuBar = ({ editor }: Props) => {
           }
         >
           code block
-        </button>
-        <button
+        </button> */}
+        {/* <button
           type="button"
           onClick={() => editor.chain().focus().toggleBlockquote().run()}
           className={
@@ -157,21 +157,21 @@ const EditorMenuBar = ({ editor }: Props) => {
           }
         >
           blockquote
-        </button>
-        <button
+        </button> */}
+        {/* <button
           type="button"
           onClick={() => editor.chain().focus().undo().run()}
           disabled={!editor.can().chain().focus().undo().run()}
         >
           undo
-        </button>
-        <button
+        </button> */}
+        {/* <button
           type="button"
           onClick={() => editor.chain().focus().redo().run()}
           disabled={!editor.can().chain().focus().redo().run()}
         >
           redo
-        </button>
+        </button> */}
       </div>
     </div>
   );

@@ -25,7 +25,7 @@ const Navbar = (props: Props) => {
           <h1 className="font-bold text-3xl md:text-5xl ">Not for everyone</h1>
           <p className="text-sm mt-3"></p>
         </div>
-        <div className="basis-full relative w-auto h-32 bg-wh-100">
+        {/* <div className="basis-full relative w-auto h-32 bg-wh-100">
           <Image
             fill
             sizes="(min-width: 480px) 100vw, (max-width: 768px) 75vw, (max-width: 1060px) 50vw, 33vw"
@@ -34,7 +34,7 @@ const Navbar = (props: Props) => {
             placeholder="blur"
             style={{ objectFit: "cover" }}
           />
-        </div>
+        </div> */}
       </div>
       <hr className="border-1 mx-10" />
     </header>
