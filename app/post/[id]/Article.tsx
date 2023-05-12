@@ -31,18 +31,41 @@ const Article = ({
       .setContent("Generating Ai Content. Please Wait...")
       .run();
 
-    const response = await fetch(`${process.env.NEXT_PUBLIC_BASE_URL}/api/ai`, {
-      method: "POST",
-      headers: { "Content-Type": "application/json" },
-      body: JSON.stringify({
-        title: title,
-        role: role,
-      }),
-    });
-    const data = await response.json();
+    const apiUrl = `${process.env.NEXT_PUBLIC_BASE_URL}/api/ai`;
+    const requestBody = { title: title, role: role };
+    const headers = { "Content-Type": "application/json" };
+    let delay = 1000;
+    let retryCount = 0;
+    let response = null;
 
-    editor.chain().focus().setContent(data.content).run();
-    setContent(data.content);
+    while (response === null) {
+      try {
+        response = await fetch(apiUrl, {
+          method: "POST",
+          headers: headers,
+          body: JSON.stringify(requestBody),
+        });
+        const data = await response.json();
+        editor.chain().focus().setContent(data.content).run();
+        setContent(data.content);
+      } catch (error: any) {
+        if (error.response.status === 429) {
+          console.log(
+            `Request limit reached. Retrying in ${delay / 1000} seconds...`
+          );
+          retryCount += 1;
+          await new Promise((resolve) => setTimeout(resolve, delay));
+          delay *= 2;
+          if (retryCount > 5) {
+            console.log(`Maximum retries reached. Aborting...`);
+            break;
+          }
+        } else {
+          console.error("request error", error);
+          break;
+        }
+      }
+    }
   };
 
   return (
