@@ -3,13 +3,13 @@ import { Configuration, CreateChatCompletionResponse, OpenAIApi } from "openai";
 import { AxiosResponse } from "axios";
 
 const configuration = new Configuration({
-  apiKey: process.env.REACT_APP_OPENAI_API_KEY,
+  apiKey: process.env.OPENAI_API_KEY,
 });
 const openai = new OpenAIApi(configuration);
 
-export async function POST(req: Request, res: any) {
+export async function POST(request: Request) {
   try {
-    const { title, role } = await req.json();
+    const { title, role } = await request.json();
 
     const aiResponse: AxiosResponse<CreateChatCompletionResponse, any> =
       await openai.createChatCompletion({
