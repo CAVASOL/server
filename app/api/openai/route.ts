@@ -17,11 +17,11 @@ export async function POST(request: Request) {
         messages: [
           {
             role: "user",
-            content: `Create 3 line blog post with html tags based on this title: ${title}`,
+            content: `Create 3 line blog post with html tags based on this title: ${title}. and do not say "Sure thing"`,
           },
           {
             role: "system",
-            content: `${
+            content: `Your tone is :${
               role || "I am a helpful assistant"
             }. Write with html tags.`,
           },
