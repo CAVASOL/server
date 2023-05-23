@@ -1,8 +1,5 @@
 import React from "react";
 import Link from "next/link";
-import Image from "next/image";
-import SocialLinks from "./SocialLinks";
-import Ad1 from "public/assets/ad-1.jpg";
 
 type Props = {};
 
@@ -13,14 +10,14 @@ const Navbar = (props: Props) => {
         <div className="flex justify-between items-center gap-10">
           <Link href="/">Home</Link>
           <Link href="/">Blog</Link>
-          <Link href="/">About</Link>
+          <Link href={`${process.env.NEXT_PUBLIC_BASE_URL}/about`}>About</Link>
         </div>
         {/* <div>Sign in</div> */}
       </nav>
       <div className="flex justify-between gap-8 mt-5 mb-4 mx-10">
         <div className="basis-2/3 md:mt-3">
           <h1 className="font-bold text-3xl md:text-5xl ">Not for everyone</h1>
-          <p className="text-sm mt-3"></p>
+          {/* <p className="text-sm mt-3"></p> */}
         </div>
         {/* <div className="basis-full relative w-auto h-32 bg-wh-100">
           <Image
@@ -33,7 +30,7 @@ const Navbar = (props: Props) => {
           />
         </div> */}
       </div>
-      <hr className="border-1 mx-10" />
+      {/* <hr className="border-1 mx-10" /> */}
     </header>
   );
 };

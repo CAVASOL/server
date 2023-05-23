@@ -4,8 +4,8 @@ module.exports = {
   theme: {
     extend: {
       colors: {
-        "wh-10": "#F4F4F4",
-        "wh-50": "#FBFBFB",
+        "wh-10": "#FBFBFB",
+        "wh-50": "#F4F4F4",
         "wh-100": "#C9C9C9",
         "wh-300": "#939393",
         "wh-500": "#595959",

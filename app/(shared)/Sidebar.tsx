@@ -27,19 +27,6 @@ const Sidebar = (props: Props) => {
           placeholder="blur"
         />
       </div>
-      <h4 className="bg-wh-900 py-3 px-5 text-wh-50 text-xs font-bold text-center">
-        About the blog
-      </h4>
-      <div className="flex justify-center my-3">
-        <Image
-          src={AboutProfile}
-          alt="about-profile"
-          placeholder="blur"
-          style={{ width: "500px", height: "250px", objectFit: "cover" }}
-        />
-      </div>
-      <h4 className="py-3 px-5 text-wh-500 font-bold text-center">Joshua</h4>
-      <p className="text-wh-500 text-center text-sm">some text</p>
     </section>
   );
 };

@@ -8,7 +8,7 @@ const openSans = Open_Sans({
 });
 
 export const metadata = {
-  title: "Blog",
+  title: "Not for everyone",
   description: "Not for everyone",
 };
 
