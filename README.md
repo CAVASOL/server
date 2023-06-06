@@ -1,4 +1,4 @@
-## Not For Everyone
+## Knot For Everyone
 
 Blog app automatically generates posts according to titles using Open AI's API and Tiptap editor
 
