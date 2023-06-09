@@ -10,7 +10,7 @@ function Other({ otherPosts }: Props) {
   return (
     <section className="pt-4 mb-16">
       <hr className="border-1" />
-      <p className="font-bold text-2xl my-8">Others</p>
+      <p className="font-bold text-2xl my-8 text-wh-50">Others</p>
       <div className="sm:grid grid-cols-2 gap-16">
         <Card
           className="mt-5 sm:mt-0"

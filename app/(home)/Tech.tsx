@@ -11,10 +11,10 @@ const Tech = ({ techPosts }: Props) => {
     <section>
       <hr className="border-1" />
       <div className="flex items-center gap-3 my-8">
-        <h4 className="bg-accent-orange py-2 px-5 text-wh-900 text-sm font-bold">
+        <h4 className="bg-accent-green py-2 px-5 text-wh-900 text-sm font-bold">
           Tech
         </h4>
-        <p className="font-bold text-2xl">Accessibility</p>
+        <p className="font-bold text-2xl text-wh-50">AI & Accessibility</p>
       </div>
       <div className="sm:grid grid-cols-2 grid-rows-3 gap-x-8 gap-y-8 my-5">
         <Card

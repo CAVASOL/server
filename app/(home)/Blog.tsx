@@ -14,7 +14,7 @@ function Blog({ blogPosts }: Props) {
         <h4 className="bg-accent-green py-2 px-5 text-wh-900 text-sm font-bold">
           Blog
         </h4>
-        <p className="font-bold text-2xl">New episodes</p>
+        <p className="font-bold text-2xl text-wh-50">Trends</p>
       </div>
       <div className="sm:flex justify-between gap-8">
         <Card

@@ -9,10 +9,13 @@ module.exports = {
         "wh-100": "#C9C9C9",
         "wh-300": "#939393",
         "wh-500": "#595959",
+        "wh-700": "#202023",
         "wh-900": "#0F0F0F",
+        "accent-blue": "#09132E",
         "accent-red": "#EA9648",
-        "accent-orange": "#F6CF68",
-        "accent-green": "#C2E9B4",
+        "accent-yellow": "#F9DC5C",
+        "accent-orange": "#DCDCAA",
+        "accent-green": "#0BBB7A",
       },
       backgroundImage: (theme) => ({
         "gradient-gradual":

@@ -19,7 +19,7 @@ export default function RootLayout({
 }) {
   return (
     <html className={openSans.className} lang="en">
-      <body>
+      <body className="bg-accent-blue">
         <Navbar />
         {children}
         <Footer />

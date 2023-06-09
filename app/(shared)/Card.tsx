@@ -43,7 +43,7 @@ function Card({
       <div className="basis-full">
         <Link href={`${process.env.NEXT_PUBLIC_BASE_URL}/post/${post?.id}`}>
           <h4
-            className={`font-bold hover:text-accent-green
+            className={`font-bold hover:text-accent-green text-wh-50
             ${isSmallCard ? "text-base" : "text-lg"}
             ${isSmallCard ? "line-clamp-2" : ""}
           `}
@@ -52,11 +52,11 @@ function Card({
           </h4>
         </Link>
         <div className={`${isSmallCard ? "my-2" : "flex my-3"} gap-3`}>
-          <h5 className="font-semibold text-xs">{author}</h5>
-          <h6 className="text-wh-300 text-xs">{formattedDate}</h6>
+          <h5 className="font-semibold text-xs text-wh-100">{author}</h5>
+          <h6 className="text-wh-100 text-xs">{formattedDate}</h6>
         </div>
         <p
-          className={`text-wh-500 ${
+          className={`text-wh-100 ${
             isLongForm ? "line-clamp-5" : "line-clamp-3"
           }`}
         >
