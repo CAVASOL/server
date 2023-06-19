@@ -10,4 +10,4 @@ yarn dev
 pnpm dev
 ```
 
-<img align="center" src="./server.jpeg" width="700px" />
+<img align="center" src="./server.png" width="700px" />
