@@ -9,3 +9,5 @@ yarn dev
 # or
 pnpm dev
 ```
+
+<img align="center" src="./server.jpeg" width="700px" />
