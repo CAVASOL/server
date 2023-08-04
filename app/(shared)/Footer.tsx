@@ -6,11 +6,11 @@ const Footer = () => {
     <footer className="bg-accent-blue text-wh-50 py-8 px-8">
       <div className="justify-between mx-auto gap-16 sm:flex">
         <div className="mt-8 basis-1/2 sm:mt-0">
-          <h2 className="font-bold text-xl">Not for everyone</h2>
+          <h2 className="font-bold text-xl">Knot for everyone</h2>
           <p className="my-5">
-            District of Not for everyone is space for private thoughts
+            District of Knot for everyone is space for private thoughts
           </p>
-          <p>All Rights Reserved</p>
+          <p>All Rights Reserved.</p>
         </div>
         <div className="mt-16 basis-1/4 sm:mt-0">
           <h2 className="font-bold text-xl">Links</h2>

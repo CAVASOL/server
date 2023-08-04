@@ -42,7 +42,7 @@ const CategoryAndEdit = ({
 
   return (
     <div className="flex justify-between items-center">
-      <h4 className="bg-accent-orange py-2 px-5 text-wh-900 text-sm font-bold">
+      <h4 className="bg-accent-green py-2 px-5 text-wh-900 text-sm font-bold">
         {post.category}
       </h4>
       <div className="mt-4">

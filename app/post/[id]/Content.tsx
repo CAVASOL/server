@@ -84,7 +84,7 @@ const Content = ({ post }: Props) => {
 
   return (
     <div className="prose w-full max-w-full mb-10">
-      <h5 className="text-wh-300">
+      <h5 className="text-wh-50">
         {`Home > ${post.category} > ${post.title}`}
       </h5>
       <CategoryAndEdit
@@ -104,19 +104,21 @@ const Content = ({ post }: Props) => {
           {isEditable ? (
             <div>
               <textarea
-                className="border-2 rounded-md bg-wh-50 p-3 w-full"
+                className="border-2 rounded-md bg-wh-100 p-3 w-full"
                 placeholder="Title"
                 onChange={handleOnChangeTitle}
                 value={title}
               />
-              {err && <p className="mt-1 text-primary-500">{err}</p>}
+              {err && <p className="mt-1 text-primary-50">{err}</p>}
             </div>
           ) : (
-            <h3 className="font-bold text-3xl mt-3">{title}</h3>
+            <h3 className="font-bold text-3xl mt-3 text-wh-50">{title}</h3>
           )}
           <div className="flex gap-3">
-            <h5 className="font-semibold text-xs">By {post.author}</h5>
-            <h6 className="text-wh-300 text-xs">{formattedDate}</h6>
+            <h5 className="font-semibold text-xs text-wh-50">
+              By {post.author}
+            </h5>
+            <h6 className="text-wh-50 text-xs">{formattedDate}</h6>
           </div>
         </>
         <div className="relative w-auto mt-2 mb-16 h-96">

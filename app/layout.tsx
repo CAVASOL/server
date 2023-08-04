@@ -8,8 +8,8 @@ const openSans = Open_Sans({
 });
 
 export const metadata = {
-  title: "Not for everyone",
-  description: "Not for everyone",
+  title: "Knot for everyone",
+  description: "Knot for everyone",
 };
 
 export default function RootLayout({

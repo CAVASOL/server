@@ -12,12 +12,11 @@ const Navbar = (props: Props) => {
           <Link href="/">Blog</Link>
           <Link href="/about">About</Link>
         </div>
-        {/* <div>Sign in</div> */}
       </nav>
       <div className="flex justify-between gap-8 mt-5 mb-4 mx-10">
         <div className="basis-2/3 md:mt-3">
           <h1 className="font-bold text-3xl text-wh-50 md:text-5xl">
-            Not for everyone
+            Knot for everyone
           </h1>
         </div>
       </div>

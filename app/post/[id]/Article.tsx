@@ -42,27 +42,29 @@ const Article = ({
   };
 
   return (
-    <article className="text-wh-500 leading-8">
+    <article className="text-wh-50 leading-8">
       {isEditable && (
-        <div className="border-2 rounded-md bg-wh-50 p-3 mb-3">
+        <div className="border-2 rounded-md bg-wh-100 p-3 mb-3">
           <h4 className="m-0 p-0">Generate AI Content</h4>
-          <p className="my-1 p-0 text-xs">What type of writer do you want?</p>
+          <p className="my-1 p-0 text-xs text-wh-700">
+            What type of writer do you want?
+          </p>
           <div className="flex justify-between gap-5">
             <input
-              className="border-2 rounded-md bg-wh-50 px-3 py-1 w-full"
+              className="border-2 rounded-md bg-wh-100 px-3 py-1 w-full"
               placeholder="Role"
               onChange={(e) => setRole(e.target.value)}
               value={role}
             />
             <button type="button" onClick={postAiContent}>
-              <RocketLaunchIcon className="h-8 w-8 text-accent-orange hover:text-wh-300" />
+              <RocketLaunchIcon className="h-8 w-8 text-accent-blue hover:text-accent-red" />
             </button>
           </div>
         </div>
       )}
       <div
         className={
-          isEditable ? "border-2 rounded-md bg-wh-50 p-3" : "w-full max-w-full"
+          isEditable ? "border-2 rounded-md bg-wh-100 p-3" : "w-full max-w-full"
         }
       >
         {isEditable && (
@@ -73,7 +75,7 @@ const Article = ({
         )}
         <EditorContent editor={editor} />
       </div>
-      {contentErr && <p className="mt-1 text-wh-900">{contentErr}</p>}
+      {contentErr && <p className="mt-1 text-wh-50">{contentErr}</p>}
     </article>
   );
 };

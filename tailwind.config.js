@@ -11,10 +11,10 @@ module.exports = {
         "wh-500": "#595959",
         "wh-700": "#202023",
         "wh-900": "#0F0F0F",
-        "accent-blue": "#09132E",
+        "accent-blue": "#001D36",
         "accent-red": "#EA9648",
         "accent-yellow": "#F9DC5C",
-        "accent-orange": "#DCDCAA",
+        "accent-orange": "#E08B27",
         "accent-green": "#0BBB7A",
       },
       backgroundImage: (theme) => ({
