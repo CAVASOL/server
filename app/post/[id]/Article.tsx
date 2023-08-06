@@ -51,7 +51,7 @@ const Article = ({
           </p>
           <div className="flex justify-between gap-5">
             <input
-              className="border-2 rounded-md bg-wh-100 px-3 py-1 w-full"
+              className="border-2 rounded-md bg-wh-50 text-wh-500 px-3 py-1 w-full"
               placeholder="Role"
               onChange={(e) => setRole(e.target.value)}
               value={role}
@@ -64,7 +64,9 @@ const Article = ({
       )}
       <div
         className={
-          isEditable ? "border-2 rounded-md bg-wh-100 p-3" : "w-full max-w-full"
+          isEditable
+            ? "border-2 rounded-md bg-wh-100 p-3"
+            : "w-full max-w-full mb-10 bg-wh-50 rounded-md p-3"
         }
       >
         {isEditable && (

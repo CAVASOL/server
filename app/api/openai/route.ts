@@ -28,7 +28,6 @@ export async function POST(request: Request) {
         ],
       });
 
-    // res.revalidate("/api/posts");
     return NextResponse.json(
       {
         content: aiResponse.data.choices[0].message?.content,
