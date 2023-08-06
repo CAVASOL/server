@@ -58,7 +58,7 @@ const Content = ({ post }: Props) => {
     if (editor?.isEmpty) setContentErr("This field is required.");
     if (title === "" || editor?.isEmpty) return;
 
-    const response = await fetch(`.../api/post/${post?.id}`, {
+    const response = await fetch(`/api/post/${post?.id}`, {
       method: "PATCH",
       headers: {
         "Content-Type": "application/json",
