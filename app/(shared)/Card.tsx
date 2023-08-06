@@ -25,10 +25,7 @@ function Card({
 
   return (
     <div className={className}>
-      <Link
-        className="basis-full hover:opacity-70"
-        href={`.../post/${post?.id}`}
-      >
+      <Link className="basis-full hover:opacity-70" href={`/post/${post?.id}`}>
         <div className={`relative w-auto mb-3 ${imageHeight}`}>
           <Image
             fill
@@ -41,7 +38,7 @@ function Card({
         </div>
       </Link>
       <div className="basis-full">
-        <Link href={`.../post/${post?.id}`}>
+        <Link href={`/post/${post?.id}`}>
           <h4
             className={`font-bold hover:text-accent-green text-wh-50
             ${isSmallCard ? "text-base" : "text-lg"}
