@@ -46,7 +46,7 @@ const Thoughts = ({ thoughtsPosts }: Props) => {
         <div className="bg-wh-900 py-2 px-8 text-wh-10 text-sm font-bold">
           Thoughts
         </div>
-        <p className="text-sm">you're something wild</p>
+        <p className="text-sm">you are something wild</p>
       </div>
       <div className="sm:grid gap-5 grid-cols-4 grid-rows-2 sm:h-[600px] my-3">
         <ThoughtsCard
@@ -67,9 +67,9 @@ const Thoughts = ({ thoughtsPosts }: Props) => {
         />
       </div>
       <p className="text-sm">
-        When I open my eyes, I can't hear your voice I can't see your smile I
-        have no choice but to close my eyes tight 'Til I know it's for sure, you
-        been there all along right where you belong.
+        When I open my eyes, I can not hear your voice I can not see your smile
+        I have no choice but to close my eyes tight until I know it is for sure,
+        you been there all along right where you belong.
       </p>
     </section>
   );
