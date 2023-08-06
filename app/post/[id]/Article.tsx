@@ -31,7 +31,7 @@ const Article = ({
       .setContent("Generating Ai Content. Please Wait...")
       .run();
 
-    const res = await fetch(`${process.env.NEXT_PUBLIC_BASE_URL}/api/openai`, {
+    const res = await fetch(`.../api/openai`, {
       method: "POST",
       headers: { "Content-Type": "application/json" },
       body: JSON.stringify({ title: title, role: role }),
