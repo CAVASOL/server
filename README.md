@@ -1,6 +1,6 @@
 ## Knot For Everyone
 
-Blog app automatically generates posts according to titles using Open AI's API and Tiptap editor
-
+Knot For Everyone is a blogging app automatically generates post. If the post screen doesn't open, it means my database princess is sleeping.
+if you can see any post screen, click the edit btn!
 
 <img align="center" src="./server.png" width="700px" />
